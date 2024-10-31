@@ -7,6 +7,7 @@ We provide an offline data augmentation method that is suitable for cases with m
 We support network training with different annotation formats, utilizing the effective [yolov8-pose](https://docs.ultralytics.com/) detection model. For more information, please refer to the [arXiv preprint](https://arxiv.org/abs/2305.09972).
 
 ![image](assests/1min.gif)
+
 We provide an effective online tracking method for closed containers, supporting tracking results in MOT format (for tracking performance validation), as well as .npy or .json output formats (for future behavior recognition or temporal localization tasks).
 Currently, we have open-sourced a demo that includes zebrafish tracking tests, where the Reid mode is specifically designed for identifying male and female zebrafish. Using Reid identification ensures tracking for up to 10 minutes, provided that the number of identified animals is 2. The online tracking method supports multiple animals. If you require longer identity tracking, please ensure optimal external factors such as lighting and water quality.
 
