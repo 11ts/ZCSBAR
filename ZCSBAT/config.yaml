@@ -1,0 +1,45 @@
+Project:
+  Zebrash_tracking
+
+data_aug:
+  methodA: [intersection,3]    # [method,num_sample]  
+  methodB: [traject,5]         # method including :   intersection  norm                          / traject
+                               # num_sample: generate num_sample*num_sample images by one image   / numbers of trajectory per image
+                               
+data_division:
+  Dataset_root: Fish
+  original: original
+  format: 1                    # 1 yolo   2 labelme   3 x-anylabel   4 coco
+  test_frac: 0.2               # tain/test  frac
+
+
+training:
+  train: dataset/Fish/train 
+  val: dataset/Fish/val
+  kpt_shape: [5, 3]            # [ joints number  , [x,y,conf] ]
+  names:
+    0: fish
+  epochs: 70
+  imgsz: 640
+  batch: 16
+  device: 0
+  workers: 0
+  model: yolov8m-pose   #yolov8n-pose   yolov8m-pose   yolov8l-pose
+
+
+tracking:
+  pose_model: models/best_hand.pt                                   # tracking_demo using anormalydect-reid-fpsort method
+  tracking_method: FP-sort                                          # FP-sort    P-sort    FP-delta-sort  
+  K_value: 20                                                       # if using FP-delta-sort,set value K from 0~150 to get better tracking performance
+  joints: 5                                                         # model input joint number
+  reid_model: 
+    status: True
+    model_PATH: models/gender.pt
+  Anormaly_dection: 
+    status: True                                            #If this function is True, it is necessary to ensure that there are always only two target objects in the video, that is, in the perspective of a closed container.
+    fixnum: 2                                               # object nums   
+  vediodir: D:\user\SZ\Project\DLC\vedio                    # input predict vedios file path
+  save_vedio: True
+  save_json: True
+  show: True
+
