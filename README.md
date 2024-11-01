@@ -41,11 +41,12 @@ conda create -n ZCSBAT python=3.8.19
 Step 3.In the command line terminal, switch to this virtual environment. Enter the main directory of the current folder through the cd command.
 
 ```
-pip install requrements.txt
+pip install requirements.txt
 ```
 Step 4.Then, download pre-generated pose and Reid checkpoint file from
 [here](https://drive.google.com/drive/folders/16O9u-7Wt1zebxYDLn3XYZrAiKEgyarqo?usp=drive_link ).
 Please place the downloaded weights in the `models` folder.
+At the same time, we provide [benchmark videos here](https://drive.google.com/drive/folders/1t5wQ8Us4lW5Tw_Gs4CSe_w6-gvj4_SRV?usp=drive_link) for prediction. Its basic path needs to be configured in config.yaml.
 
 *NOTE:* Our pre-trained zebrafish behavior recognition pose model, 
 which is trained by the Zebrash tracking data set proposed in this paper. The Reid re-identification 
