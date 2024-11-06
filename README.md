@@ -1,8 +1,8 @@
-# ZCSBAT
+# ZCSBAR
 
 ## Introduction
 
-This repository contains code for *Zebrafish Courtship-related Social Behavior Automated Recognition with few-shot Learning* (ZCSBAT).
+This repository contains code for *Zebrafish Courtship-related Social Behavior Automated Recognition* (ZCSBAR).
 We provide an offline data augmentation method that is suitable for cases with missing data annotations and improves recognition accuracy under multi-object overlapping occlusion.
 We support network training with different annotation formats, utilizing the effective [yolov8-pose](https://docs.ultralytics.com/) detection model. For more information, please refer to the [arXiv preprint](https://arxiv.org/abs/2305.09972).
 
@@ -10,11 +10,13 @@ We support network training with different annotation formats, utilizing the eff
 
 We provide an effective online tracking method for closed containers, supporting tracking results in MOT format (for tracking performance validation), as well as .npy or .json output formats (for future behavior recognition or temporal localization tasks).
 Currently, we have open-sourced a demo that includes zebrafish tracking tests, where the Reid mode is specifically designed for identifying male and female zebrafish. Using Reid identification ensures tracking for up to 10 minutes, provided that the number of identified animals is 2. The online tracking method supports multiple animals. If you require longer identity tracking, please ensure optimal external factors such as lighting and water quality.
+[This video Link](https://drive.google.com/drive/folders/16O9u-7Wt1zebxYDLn3XYZrAiKEgyarqo?usp=drive_link ) shows the movement of zebrafish during courtship behavior. 
+High-speed cameras were used to record the tracking effect of the zebrafish courtship in an aquarium environment.
 
 ## Dependencies
 
 The code is compatible with Python 3. The following dependencies are
-needed to run ZCSBAT:
+needed to run ZCSBAR:
 
 * NumPy==1.24.1
 * OpenCV==4.10.0.84
@@ -28,15 +30,21 @@ needed to run ZCSBAT:
 
 Additionally, feature generation requires Pytorch (>= 2.1).
 
+## Datasets
+[Zebrash_PoseEstimation](https://drive.google.com/drive/folders/16V7J_wqIJhkImOX8Ulxc2Y6vOnIFpPbe?usp=drive_link)   
+
+[Zebrafish_Tracking](https://drive.google.com/drive/folders/1-1QXOLbj7I4XTXQOhL2htS5muhcvBWJz?usp=drive_link)
+
+[Zebrash_Behavior](https://drive.google.com/drive/folders/1-1QXOLbj7I4XTXQOhL2htS5muhcvBWJz?usp=drive_link)
 ## Installation
 Step 1.Clone the repository:
 ```
-git clone https://github.com/11ts/ZCSBAT.git
+git clone https://github.com/11ts/ZCSBAR.git
 ```
 Step 2.Create a new virtual environment.
 
 ```
-conda create -n ZCSBAT python=3.8.19
+conda create -n ZCSBAR python=3.8.19
 ```
 Step 3.In the command line terminal, switch to this virtual environment. Enter the main directory of the current folder through the cd command.
 
@@ -141,7 +149,7 @@ tracking:
   save_json: True
   show: True
 ```
-In package `ZCSBAT` is the main code:
+In package `ZCSBAR` is the main code:
 
 * `coco2yolo.py`: Converts COCO annotation format to YOLO
 * `custom.py`: Tracking effect visualization module
@@ -156,9 +164,9 @@ In package `ZCSBAT` is the main code:
 
 
 
-## Citing ZCSBAT
+## Citing ZCSBAR
 
 If you find this repo useful in your research, please contact us:
 
-    EMAL1: 15623631725@163.com
-    Author: ShuZhan ZhangJingJing
+    EMAL1: zhangjingjing607@163.com
+    Author: ZhanShu JingJingZhang
